@@ -1,7 +1,7 @@
 <template>
   <div id="add-blog">
     <h1 class="text-center text-bg-danger p-3">Blog Family</h1>
-    <form>
+    <form v-if="!submitted">
   <div class="mb-3">
     <label class="form-label">Blog Title</label>
     <input type="text" class="form-control"  v-model.lazy="blog.title">
@@ -31,8 +31,11 @@
   <select class="form-select m-3" v-model="blog.fruit">
   <option v-for="fruit in fruits" > {{fruit}}</option>
 </select>
-<div class="btn-primary" v-on:click.prevent="post">Add Blog</div>
+<button class="btn btn-primary" v-on:click.prevent="post">Add Blog</button>
 </form>
+<div class="alert alert-primary" role="alert" v-if="submitted">
+  Your Data Is Successfully Submitted 
+</div>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
     <h5 class="card-title">Blog title  : {{blog.title}}</h5>
@@ -58,20 +61,24 @@ export default {
         familly:[],
         fruit:""
       },
-      fruits:['banana','strawberry','orange', 'apple']
+      fruits:['banana','strawberry','orange', 'apple'], 
+      submitted:false
     }
   },
   methods:{
     post:function(){
-      this.$http.post('',{
-        title:blog.title,
-        body:blog.content,
+      this.$http.post('https://jsonplaceholder.typicode.com/posts',{
+        title:this.blog.title,
+        body:this.blog.content,
         userId:1
+      }).then((data)=>{
+        console.log(data);
+        this.submitted=true
       })
     }
   }
 }
-</script>
+</script>  
 
 <style>
 

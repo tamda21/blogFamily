@@ -1,6 +1,6 @@
 <template>
   <div class="container" v-media:bg="'sm'">
-    <h1>All Blogs </h1>
+    <h1>All Blogs Title </h1>
  <div class="mb-3">
     <label class="form-label">Search Blog</label>
     <input type="text" class="form-control"  v-model="search" placeholder="search blog">
@@ -8,7 +8,6 @@
     <div class="card mb-4" v-for="blog in filteredBlogs">
     <div class="card-body">
     <h3 class="card-title" v-rainbow>{{blog.title | upper-case }}</h3>
-      <p class="card-text">{{blog.body | snippet}}</p>
     </div>
     </div>
   </div>
@@ -29,8 +28,7 @@ export default {
     })
   },
   computed:{
-    
-    
+  
   },
 filters:{
     upperCase(value){
@@ -44,7 +42,7 @@ filters:{
       }
     }
   },
-  mixins:[listMixin]
+mixins:[listMixin]
 }
 </script>
 

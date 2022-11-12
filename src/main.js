@@ -14,7 +14,7 @@ Vue.directive('media',{
     if (binding.value=='lg') {
       el.style.width='900px';
     }else if(binding.value=='sm'){
-      el.style.width='420px'
+      el.style.width='520px'
     }
     if(binding.arg=='bg'){
       el.style.background='#ddd';

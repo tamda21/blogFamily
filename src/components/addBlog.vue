@@ -1,6 +1,6 @@
 <template>
   <div id="add-blog">
-    <h1 class="text-center text-bg-danger p-3">Blog Family</h1>
+    <h1 class="text-center text-bg-danger p-3">Blog Family </h1>
     <form v-if="!submitted">
   <div class="mb-3">
     <label class="form-label">Blog Title</label>
@@ -38,7 +38,7 @@
 </div>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-    <h5 class="card-title">Blog title  : {{blog.title}}</h5>
+    <h5 class="card-title">Blog title  : {{blog.title }}</h5>
     <p class="card-text">Blog Contact :</p>
     <p class="card-text">{{blog.content}}</p>
     <ul class="list-group">
@@ -76,7 +76,9 @@ export default {
         this.submitted=true
       })
     }
-  }
+  },
+  
+  
 }
 </script>  
 

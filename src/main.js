@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
-Vue.directive('rainbow',{
+/*Vue.directive('rainbow',{
   bind(el,binding,vnode){
     //el.style.color='#'+Math.random().toString().slice(2,8);
     el.style.color='red';
     
   }
-});
+});*/
 Vue.directive('media',{
   bind(el,binding,vnode){
     el.style.maxWidth='1200px';
@@ -24,9 +24,9 @@ Vue.directive('media',{
   }
 });
 //Filters
-Vue.filter('upper-case',(value)=>{
+/*Vue.filter('upper-case',(value)=>{
   return value.toUpperCase();
-});
+});*/
 Vue.filter('snippet',(value)=>{
   return value.slice(0,100)+'...'
 })

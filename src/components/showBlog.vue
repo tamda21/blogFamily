@@ -1,6 +1,6 @@
 <template>
   <div class="container" v-media:bg="'sm'">
-    <h1>All Blogs</h1>
+    <h1>All Blogs </h1>
  <div class="mb-3">
     <label class="form-label">Search Blog</label>
     <input type="text" class="form-control"  v-model="search" placeholder="search blog">
@@ -33,6 +33,18 @@ export default {
       return this.blogs.filter((blog)=>{
         return blog.title.match(this.search)
       })
+    }
+  },
+filters:{
+    upperCase(value){
+      return value.toUpperCase();
+    }
+  },
+  directives:{
+    'rainbow':{
+      bind(el,binding,vnode){
+        el.style.color='blue'
+      }
     }
   }
 }

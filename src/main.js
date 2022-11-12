@@ -23,7 +23,13 @@ Vue.directive('media',{
     }
   }
 });
-
+//Filters
+Vue.filter('upper-case',(value)=>{
+  return value.toUpperCase();
+});
+Vue.filter('snippet',(value)=>{
+  return value.slice(0,100)+'...'
+})
 Vue.use(VueResource);
 new Vue({
   el: '#app',

@@ -2,8 +2,8 @@
   <div class="container" v-media:bg="'sm'">
     <div class="card mb-4" v-for="blog in blogs">
     <div class="card-body">
-    <h3 class="card-title" v-rainbow>{{blog.title}}</h3>
-      <p class="card-text">{{blog.body}}</p>
+    <h3 class="card-title" v-rainbow>{{blog.title | upper-case }}</h3>
+      <p class="card-text">{{blog.body | snippet}}</p>
     </div>
     </div>
   </div>
